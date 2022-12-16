@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UNIVERSIDADE\\ITW2022\\ITW2022\\ITW2022.csproj",
+      "projectUniqueName": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\ITW2022.csproj",
       "projectName": "ITW2022",
-      "projectPath": "E:\\UNIVERSIDADE\\ITW2022\\ITW2022\\ITW2022.csproj",
+      "projectPath": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\ITW2022.csproj",
       "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-      "outputPath": "E:\\UNIVERSIDADE\\ITW2022\\ITW2022\\obj\\",
+      "outputPath": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ricar\\AppData\\Roaming\\NuGet\\NuGet.Config",
