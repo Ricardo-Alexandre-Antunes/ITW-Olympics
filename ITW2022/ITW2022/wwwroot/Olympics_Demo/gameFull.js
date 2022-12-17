@@ -31,6 +31,7 @@ var vm = function () {
             hideLoading();
             self.Id(data.Id);
             self.CountryName(data.CountryName);
+            self.Name(data.Name);
             self.Year(data.Year);
             self.Season(data.Season);
             self.City(data.City);
