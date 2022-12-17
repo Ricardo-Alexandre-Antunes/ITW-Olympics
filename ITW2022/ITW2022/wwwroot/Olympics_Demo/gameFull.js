@@ -3,7 +3,7 @@ var vm = function () {
     console.log('ViewModel initiated...');
     //---Variáveis locais
     var self = this;
-    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Games?id=');
+    self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Games/FullDetails?id=');
     self.displayName = 'Olympic Games edition Details';
     self.error = ko.observable('');
     self.passingMessage = ko.observable('');
