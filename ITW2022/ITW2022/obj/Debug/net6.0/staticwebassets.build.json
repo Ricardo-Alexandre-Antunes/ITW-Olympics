@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "u8PSnpuIw8yuEyMhnnf3keXiofgRb9OligBAIVck39Y=",
+  "Hash": "Lx/Z9kY4zbdvu9QhvJL7p4WIcPC3ADoReYeIjvY1cfs=",
   "Source": "ITW2022",
   "BasePath": "_content/ITW2022",
   "Mode": "Default",
@@ -1394,6 +1394,23 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\games.js"
     },
     {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\giphy.gif",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/giphy.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\giphy.gif"
+    },
+    {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\index.html",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
@@ -1462,6 +1479,40 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\modalities.js"
     },
     {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\modalitiesDetails.html",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/modalitiesDetails.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\modalitiesDetails.html"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\modalitiesDetails.js",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/modalitiesDetails.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\modalitiesDetails.js"
+    },
+    {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\myCSS.css",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
@@ -1496,12 +1547,12 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\myScript.js"
     },
     {
-      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\statistics.html",
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\pokemon.css",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
       "BasePath": "_content/ITW2022",
-      "RelativePath": "Olympics_Demo/statistics.html",
+      "RelativePath": "Olympics_Demo/pokemon.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1510,15 +1561,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\statistics.html"
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\pokemon.css"
     },
     {
-      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\statistics.js",
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\pokemon.html",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
       "BasePath": "_content/ITW2022",
-      "RelativePath": "Olympics_Demo/statistics.js",
+      "RelativePath": "Olympics_Demo/pokemon.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1527,7 +1578,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\statistics.js"
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\pokemon.html"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\pokemon.js",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/pokemon.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\pokemon.js"
     },
     {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
