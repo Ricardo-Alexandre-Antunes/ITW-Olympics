@@ -129,4 +129,55 @@ $(document).ready(function () {
 
 $(document).ajaxComplete(function (event, xhr, options) {
     $("#myModal").modal('hide');
-})
+});
+
+var flag = true;
+var arrayFavsIDS = new Array();
+
+var arrayLocalStorage = new Array(localStorage.getItem("IDS"));
+
+arrayLocalStorage = arrayLocalStorage[0].split(",");
+
+function addfav(event) {
+    console.log("iM IN")
+    var clicked = event.currentTarget;
+    var outElemtn = clicked.parentElement.parentElement.parentElement;
+
+    console.log("heyheyhey" + $("#tab1").children("td:first"));
+
+
+    var infoTr = new Array(outElemtn.innerText.split("    "));
+    var stelem = infoTr[0][0];
+    console.log("abacate " + stelem);
+
+
+    actualArray = arrayLocalStorage;
+
+    clicked.classList.remove("fa-heart-o");
+    clicked.classList.add("fa-heart");
+
+    if (flag) {
+        clicked.classList.remove("fa-heart-o");
+        clicked.classList.add("fa-heart");
+        if (arrayFavsIDS.includes(stelem)) {
+            console.log("já existente no array!")
+        } else {
+            arrayFavsIDS.push(stelem)
+            localStorage.setItem("IDS", arrayFavsIDS);
+        }
+
+    } else {
+        clicked.classList.add("fa-heart-o");
+        clicked.classList.remove("fa-heart");
+        if (arrayFavsIDS.includes(stelem)) {
+            arrayFavsIDS.splice(arrayFavsIDS.indexOf(stelem), 1)
+            localStorage.setItem("IDS", arrayFavsIDS);
+        } else {
+            console.log("já existente no array!")
+        }
+    }
+
+    flag = !flag;
+    console.log(arrayFavsIDS);
+}
+

@@ -65,7 +65,7 @@
         </div>
         <!-- /ko -->
 
-        <table class="table table-striped table-sm small">
+        <table class="table table-striped table-sm small" id="tab1">
             <thead class="bg-dark text-light">
                 <tr>
                     <th scope="col">Id</th>
@@ -86,7 +86,7 @@
                             <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
                         </a>
                         <button class="btn btn-default btn-xs">
-                            <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_' + Id }" title="Selecione para adicionar aos favoritos"></i>
+                            <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_' + Id }" onclick="addfav(event)" title="Selecione para adicionar aos favoritos"></i>
                         </button>
                     </td>
                 </tr>
