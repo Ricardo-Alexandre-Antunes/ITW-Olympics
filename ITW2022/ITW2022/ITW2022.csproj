@@ -9,6 +9,8 @@
   <ItemGroup>
     <Content Remove="wwwroot\Olympics_Demo\gameFull.html" />
     <Content Remove="wwwroot\Olympics_Demo\gameFull.js" />
+    <Content Remove="wwwroot\Olympics_Demo\wwwroot\countryDetails.html" />
+    <Content Remove="wwwroot\Olympics_Demo\wwwroot\countryDetails.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +35,8 @@
     <None Include="wwwroot\Olympics_Demo\myScript.js" />
     <None Include="wwwroot\Olympics_Demo\statistics.html" />
     <None Include="wwwroot\Olympics_Demo\statistics.js" />
+    <None Include="wwwroot\Olympics_Demo\countryDetails.html" />
+    <None Include="wwwroot\Olympics_Demo\countryDetails.js" />
     <None Include="wwwroot\Olympics_Demo\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
     <None Include="wwwroot\Olympics_Demo\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\Olympics_Demo\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
