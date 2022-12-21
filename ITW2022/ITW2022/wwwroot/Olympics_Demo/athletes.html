@@ -66,35 +66,10 @@
         </div>
         <!-- /ko -->
         <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: records">
-            <div id="carouselAthletes" class="carousel slide" data-interval="false">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="card-img-top" style="height: 300px" data-bind="attr:{src: Photo}">
-                        <strong><p class="carousel-caption" style="top: 75%" data-bind="text: Name"></p></strong>
-                    </div>
-                    <div class="carousel-item">
-                        <div style="padding:10px">Sex: <span data-bind="text:Sex"></span></div>
-                        <div style="padding:10px">Best Position: <span data-bind="text:BestPosition"></span></div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAthletes" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselAthletes" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: records">
             <div class="col">
                 <div class="card">
-                    <img class="card-img-top" style="height:300px" data-bind="attr:{src: Photo}">
+
+                    <img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}">
                     <div class="card-body">
                         <h5 class="card-title" data-bind="text: Name"></h5>
                         <div class="card-text">Sex: <span data-bind="text:Sex"></span></div>
@@ -110,6 +85,7 @@
                             </button>
                         </div>
                     </div>
+                    <a class="text-right position-absolute top-0 end-0" style="position:relative;top: 5px; left: 5px"><i class="fa fa-heart-o fa-lg" data-bind="attr : { 'id': 'favourite_' + Id }" title="Selecione para adicionar aos favoritos"></i></a>
                 </div>
             </div>
         </div>
