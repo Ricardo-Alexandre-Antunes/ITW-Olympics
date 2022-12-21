@@ -166,7 +166,15 @@ function addfav(event) {
             localStorage.setItem("IDS", arrayFavsIDS);
         }
 
-
+    } else {
+        clicked.classList.add("fa-heart-o");
+        clicked.classList.remove("fa-heart");
+        if (arrayFavsIDS.includes(stelem)) {
+            arrayFavsIDS.splice(arrayFavsIDS.indexOf(stelem), 1)
+            localStorage.setItem("IDS", arrayFavsIDS);
+        } else {
+            console.log("já existente no array!")
+        }
     }
 
     flag = !flag;
