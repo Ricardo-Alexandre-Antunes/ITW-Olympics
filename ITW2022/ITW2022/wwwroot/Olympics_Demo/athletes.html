@@ -65,6 +65,54 @@
             </div>
         </div>
         <!-- /ko -->
+        <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: records">
+            <div id="carouselAthletes" class="carousel slide" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="card-img-top" style="height: 300px" data-bind="attr:{src: Photo}">
+                        <strong><p class="carousel-caption" style="top: 75%" data-bind="text: Name"></p></strong>
+                    </div>
+                    <div class="carousel-item">
+                        <div style="padding:10px">Sex: <span data-bind="text:Sex"></span></div>
+                        <div style="padding:10px">Best Position: <span data-bind="text:BestPosition"></span></div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="..." class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAthletes" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAthletes" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: records">
+            <div class="col">
+                <div class="card">
+                    <img class="card-img-top" style="height:300px" data-bind="attr:{src: Photo}">
+                    <div class="card-body">
+                        <h5 class="card-title" data-bind="text: Name"></h5>
+                        <div class="card-text">Sex: <span data-bind="text:Sex"></span></div>
+                        <div class="card-text">Best Position: <span data-bind="text:BestPosition"></span></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col">
+                            <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'../Olympics_Demo/athleteDetails.html?id=' + Id }">
+                                <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
+                            </a>
+                            <button class="btn btn-default btn-xs">
+                                <i class="fa fa-heart-o" data-bind="attr : { 'id': 'favourite_' + Id }" title="Selecione para adicionar aos favoritos"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <table class="table table-striped table-sm small">
             <thead class="bg-dark text-light">
                 <tr>
@@ -95,35 +143,35 @@
             </tbody>
         </table>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="140398.ico" height="30" /> Loading data...
-                    </h5>
-                </div>
-                <div class="modal-body text-center">
-                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/69fa44d0-81b5-47a5-a4d2-db7d760e93c6/d53kvru-6dd0d8f7-fc76-418f-92b4-de8aa1d3e619.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY5ZmE0NGQwLTgxYjUtNDdhNS1hNGQyLWRiN2Q3NjBlOTNjNlwvZDUza3ZydS02ZGQwZDhmNy1mYzc2LTQxOGYtOTJiNC1kZThhYTFkM2U2MTkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.edfJBsURCWYSvKczT9g7VAkL8fYn5SyzQeUwXOapYOs" height="150" />
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <img src="140398.ico" height="30" /> Loading data...
+                        </h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/69fa44d0-81b5-47a5-a4d2-db7d760e93c6/d53kvru-6dd0d8f7-fc76-418f-92b4-de8aa1d3e619.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY5ZmE0NGQwLTgxYjUtNDdhNS1hNGQyLWRiN2Q3NjBlOTNjNlwvZDUza3ZydS02ZGQwZDhmNy1mYzc2LTQxOGYtOTJiNC1kZThhYTFkM2U2MTkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.edfJBsURCWYSvKczT9g7VAkL8fYn5SyzQeUwXOapYOs" height="150" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End of Working Area -->
-    <nav class="navbar navbar-light bg-light fixed-bottom">
-        <div class="container small">
-            <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2022/23</div>
-            <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
-            <div class="navbar-nav">
-                <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+        <!-- End of Working Area -->
+        <nav class="navbar navbar-light bg-light fixed-bottom">
+            <div class="container small">
+                <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2022/23</div>
+                <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
+                <div class="navbar-nav">
+                    <div class="nav-item text-end"><a href="https://www.ua.pt" class="nav-link">Universidade de Aveiro</a></div>
+                </div>
             </div>
-        </div>
-    </nav>
-    <script src="../Olympics_Demo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../Olympics_Demo/wwwroot/lib/knockout/dist/knockout-latest.min.js"></script>
-    <script src="../Olympics_Demo/wwwroot/lib/jquery/dist/jquery.min.js"></script>
-    <script src="athletes.js"></script>
-    <script src="JavaScript.js"></script>
+        </nav>
+        <script src="../Olympics_Demo/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../Olympics_Demo/wwwroot/lib/knockout/dist/knockout-latest.min.js"></script>
+        <script src="../Olympics_Demo/wwwroot/lib/jquery/dist/jquery.min.js"></script>
+        <script src="athletes.js"></script>
+        <script src="JavaScript.js"></script>
 </body>
 </html>
