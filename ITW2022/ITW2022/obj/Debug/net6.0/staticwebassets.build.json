@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l+H5yjAuOnwwyqCTY5FUf4DKNT/3dpHX+DYLrMStnss=",
+  "Hash": "nc1wIInciT5A1JvNGJtQEIt3cYgTjlsqYROEDHj4BeU=",
   "Source": "ITW2022",
   "BasePath": "_content/ITW2022",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\140398.ico"
     },
     {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\6661556.png",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/6661556.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\6661556.png"
+    },
+    {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\athleteDetails.html",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
@@ -1324,6 +1341,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\countryDetails.js"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\download.jfif",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/download.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\download.jfif"
     },
     {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\gameDetails.html",
@@ -1579,6 +1613,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\myScript.js"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\silhouette_medium_large_large.png",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/silhouette_medium_large_large.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\silhouette_medium_large_large.png"
     },
     {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\StyleSheet.css",
