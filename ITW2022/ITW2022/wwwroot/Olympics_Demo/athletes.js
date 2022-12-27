@@ -196,3 +196,20 @@ function addfav(event) {
     flag = !flag;
     console.log(arrayFavsIDS);
 }
+
+function name_search() {
+    let input = document.getElementById('searchbar').value
+    input = input.toLowerCase();
+    console.log(input)
+    let x = document.getElementsByClassName('Name');
+    console.log(x)
+
+    for (i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].parentElement.parentElement.parentElement.style.display = "none";
+        }
+        else {
+            x[i].parentElement.parentElement.parentElement.style.display = "inline"
+        }
+    }
+}
