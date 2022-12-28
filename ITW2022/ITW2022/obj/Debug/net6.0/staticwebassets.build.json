@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+r5cechqKKBNH7iBPz1/ZYs8b6ssaMZa+qd5rq+uF0Q=",
+  "Hash": "/cVcEErPqUrKm5SLntNofNrqQh3iQoK0NuuKgOUqXSk=",
   "Source": "ITW2022",
   "BasePath": "_content/ITW2022",
   "Mode": "Default",
@@ -1207,6 +1207,23 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\athletes.js"
     },
     {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\bronzemedal.png",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/bronzemedal.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\bronzemedal.png"
+    },
+    {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\competitionDetails.html",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
@@ -1445,6 +1462,23 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\giphy.gif"
     },
     {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\goldmedal.png",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/goldmedal.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\goldmedal.png"
+    },
+    {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\htmlpage.html",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
@@ -1615,6 +1649,23 @@
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\myScript.js"
     },
     {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\nomedal.png",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/nomedal.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\nomedal.png"
+    },
+    {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\silhouette_medium_large_large.png",
       "SourceId": "ITW2022",
       "SourceType": "Discovered",
@@ -1630,6 +1681,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\silhouette_medium_large_large.png"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\silvermedal.png",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/silvermedal.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\silvermedal.png"
     },
     {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\statistics.html",

@@ -79,7 +79,7 @@
                     <div class="card-body">
                         <h6 class="card-title Name" data-bind="text: Name"></h6>
                         <div class="card-text" >Sex: <span class="Sex" data-bind="text:Sex"></span></div>
-                        <div class="card-text">Best Position: <span class="BestPosition" data-bind="text:BestPosition"></span></div>
+                        <div class="card-text">Best Position: <span data-bind="html: conv(BestPosition)"></span></div>
                     </div>
                     <div class="card-footer">
                         <div class="col">

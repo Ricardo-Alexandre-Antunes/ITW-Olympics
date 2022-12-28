@@ -120,34 +120,6 @@ var vm = function () {
         self.activate(pg);
     }
     console.log("VM initialized!");
-
-    $(document).ready(function () {
-        let x = document.getElementsByClassName('BestPosition');
-        console.log("bananas")
-        console.log(x)
-        for (i = 0; i < x.length; i++) {
-            if (x[i].innerHTML == "1") {
-                x[i].innerHTML = "Gold";
-                break;
-            }
-            if (x[i].innerHTML == "2") {
-                x[i].innerHTML = "Silver";
-                break;
-            }
-            if (x[i].innerHTML == "3") {
-                x[i].innerHTML = "Bronze";
-                break;
-            }
-            if (x[i].innerHTML == "4") {
-                x[i].innerHTML = "No Medal";
-                break;
-            }
-        }
-
-    });
-
-
-
 };
 
 ko.bindingHandlers.safeSrc = {
@@ -165,6 +137,17 @@ ko.bindingHandlers.safeSrc = {
 
     }
 };
+
+function conv(BestPosition) {
+    if (BestPosition == 1)
+        return '<img src="goldmedal.png" style="height: 30px; width: 30px">';
+    else if (BestPosition == 2)
+        return '<img src="silvermedal.png" style="height: 30px; width: 30px">';
+    else if (BestPosition == 3)
+        return '<img src="bronzemedal.png" style="height: 30px; width: 30px">';
+    else return '<img src="nomedal.png" style="height: 30px; width: 30px">';
+}; 
+
 
 $(document).ready(function () {
     console.log("ready!");
