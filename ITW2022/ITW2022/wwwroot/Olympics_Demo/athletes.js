@@ -120,6 +120,34 @@ var vm = function () {
         self.activate(pg);
     }
     console.log("VM initialized!");
+
+    $(document).ready(function () {
+        let x = document.getElementsByClassName('BestPosition');
+        console.log("bananas")
+        console.log(x)
+        for (i = 0; i < x.length; i++) {
+            if (x[i].innerHTML == "1") {
+                x[i].innerHTML = "Gold";
+                break;
+            }
+            if (x[i].innerHTML == "2") {
+                x[i].innerHTML = "Silver";
+                break;
+            }
+            if (x[i].innerHTML == "3") {
+                x[i].innerHTML = "Bronze";
+                break;
+            }
+            if (x[i].innerHTML == "4") {
+                x[i].innerHTML = "No Medal";
+                break;
+            }
+        }
+
+    });
+
+
+
 };
 
 ko.bindingHandlers.safeSrc = {
@@ -212,4 +240,7 @@ function name_search() {
             x[i].parentElement.parentElement.parentElement.style.display = "inline"
         }
     }
-}
+};
+
+
+

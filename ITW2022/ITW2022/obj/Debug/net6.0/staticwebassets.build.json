@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nc1wIInciT5A1JvNGJtQEIt3cYgTjlsqYROEDHj4BeU=",
+  "Hash": "+r5cechqKKBNH7iBPz1/ZYs8b6ssaMZa+qd5rq+uF0Q=",
   "Source": "ITW2022",
   "BasePath": "_content/ITW2022",
   "Mode": "Default",
@@ -1630,6 +1630,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Olympics_Demo\\silhouette_medium_large_large.png"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\statistics.html",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/statistics.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\statistics.html"
+    },
+    {
+      "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\statistics.js",
+      "SourceId": "ITW2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\",
+      "BasePath": "_content/ITW2022",
+      "RelativePath": "Olympics_Demo/statistics.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Olympics_Demo\\statistics.js"
     },
     {
       "Identity": "E:\\UNIVERSIDADE\\Github_Rep\\ITW-Olympics\\ITW2022\\ITW2022\\wwwroot\\Olympics_Demo\\StyleSheet.css",
