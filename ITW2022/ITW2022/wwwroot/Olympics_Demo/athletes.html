@@ -75,7 +75,7 @@
         <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: records">
             <div class="col">
                 <div class="card">
-                    <div style="overflow:hidden; height:230px" id="Photo"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                    <div style="overflow:hidden; height:230px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
                     <div class="card-body">
                         <h6 class="card-title Name" data-bind="text: Name"></h6>
                         <div class="card-text" >Sex: <span class="Sex" data-bind="text:Sex"></span></div>

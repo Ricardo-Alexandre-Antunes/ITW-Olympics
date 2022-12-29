@@ -31,3 +31,11 @@
 li.page-item a {
     font-size: 0.85rem;
 }
+
+img {
+    transition: transform .2s
+}
+
+img:hover {
+    transform: scale(1.2);
+}
