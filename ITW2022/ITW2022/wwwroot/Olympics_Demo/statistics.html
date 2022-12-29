@@ -11,6 +11,7 @@
     <link href="../Olympics_Demo/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../Olympics_Demo/wwwroot/lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="myCSS.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -31,6 +32,88 @@
             </div>
         </div>
     </nav>
+    <div style="padding: 10px;">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Name", "Counter", { role: "style" } ],
+            ["1896 Summer", 12, "blue"],
+            ["1900 Summer", 31, "blue"],
+            ["1904 Summer", 15, "blue"],
+            ["1906 Summer", 21, "blue"],
+            ["1908 Summer", 22, "blue"],
+            ["1912 Summer", 29, "blue"],
+            ["1920 Summer", 29, "blue"],
+            ["1924 Summer", 45, "blue"],
+            ["1924 Winter", 19, "blue"],
+            ["1928 Summer", 46, "blue"],
+            ["1928 Winter", 25, "blue"],
+            ["1932 Summer", 47, "blue"],
+            ["1932 Winter", 17, "blue"],
+            ["1936 Summer", 49, "blue"],
+            ["1936 Winter", 28, "blue"],
+            ["1948 Summer", 59, "blue"],
+            ["1948 Winter", 28, "blue"],
+            ["1952 Summer", 69, "blue"],
+            ["1952 Winter", 30, "blue"],
+            ["1956 Summer", 72, "blue"],
+            ["1956 Winter", 32, "blue"],
+            ["1960 Summer", 84, "blue"],
+            ["1960 Winter", 30, "blue"],
+            ["1964 Summer", 93, "blue"],
+            ["1964 Winter", 36, "blue"],
+            ["1968 Summer", 112, "blue"],
+            ["1968 Winter", 37, "blue"],
+            ["1972 Summer", 121, "blue"],
+            ["1972 Winter", 35, "blue"],
+            ["1976 Summer", 92, "blue"],
+            ["1976 Winter", 37, "blue"],
+            ["1980 Summer", 80, "blue"],
+            ["1980 Winter", 37, "blue"],
+            ["1984 Summer", 140, "blue"],
+            ["1984 Winter", 49, "blue"],
+            ["1988 Summer", 159, "blue"],
+            ["1988 Winter", 57, "blue"],
+            ["1992 Summer", 169, "blue"],
+            ["1992 Winter", 64, "blue"],
+            ["1994 Winter", 67, "blue"],
+            ["1996 Summer", 197, "blue"],
+            ["1998 Winter", 72, "blue"],
+            ["2000 Summer", 200, "blue"],
+            ["2002 Winter", 77, "blue"],
+            ["2004 Summer", 201, "blue"],
+            ["2006 Winter", 79, "blue"],
+            ["2008 Summer", 204, "blue"],
+            ["2010 Winter", 82, "blue"],
+            ["2012 Summer", 205, "blue"],
+            ["2014 Winter", 89, "blue"],
+            ["2016 Summer", 207, "blue"],
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                        { calc: "stringify",
+                            sourceColumn: 1,
+                            type: "string",
+                            role: "annotation" },
+                        2]);
+
+        var options = {
+            title: "Número de países participantes nos Jogos olímpicos por edição",
+            width: 2000,
+            height: 800,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+    }
+    </script>
+    </div>
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">

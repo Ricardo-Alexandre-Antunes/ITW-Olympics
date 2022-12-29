@@ -1,7 +1,7 @@
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Variï¿½veis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/Athletes/FullDetails?id=');
     self.displayName = 'Athlete Details';
@@ -104,3 +104,4 @@ $(document).ready(function () {
 $(document).ajaxComplete(function (event, xhr, options) {
     $("#myModal").modal('hide');
 })
+
