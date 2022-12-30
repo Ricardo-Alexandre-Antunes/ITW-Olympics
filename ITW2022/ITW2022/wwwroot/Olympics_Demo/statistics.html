@@ -35,7 +35,6 @@
 
 
     <div style="padding: 10px;">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load("current", {packages:['corechart']});
         google.charts.setOnLoadCallback(drawChart);
@@ -105,7 +104,7 @@
 
         var options = {
             title: "Número de países participantes nos Jogos olímpicos por edição",
-            width: 2000,
+            width: 1800,
             height: 800,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
@@ -116,6 +115,87 @@
     </script>
     </div>
 
+    <div id="chart_div" style="padding-left: 10px;">
+        <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+            var data = google.visualization.arrayToDataTable([
+            ["Name", "Counter", { role: "style" } ],
+            ["1896 Summer", 9, "blue"],
+            ["1900 Summer", 20, "blue"],
+            ["1904 Summer", 18, "blue"],
+            ["1906 Summer", 13, "blue"],
+            ["1908 Summer", 24, "blue"],
+            ["1912 Summer", 17, "blue"],
+            ["1920 Summer", 25, "blue"],
+            ["1924 Summer", 20, "blue"],
+            ["1924 Winter", 10, "blue"],
+            ["1928 Summer", 17, "blue"],
+            ["1928 Winter", 8, "blue"],
+            ["1932 Summer", 18, "blue"],
+            ["1932 Winter", 7, "blue"],
+            ["1936 Summer", 24, "blue"],
+            ["1936 Winter", 8, "blue"],
+            ["1948 Summer", 20, "blue"],
+            ["1948 Winter", 9, "blue"],
+            ["1952 Summer", 19, "blue"],
+            ["1952 Winter", 8, "blue"],
+            ["1956 Summer", 19, "blue"],
+            ["1956 Winter", 8, "blue"],
+            ["1960 Summer", 19, "blue"],
+            ["1960 Winter", 8, "blue"],
+            ["1964 Summer", 21, "blue"],
+            ["1964 Winter", 10, "blue"],
+            ["1968 Summer", 20, "blue"],
+            ["1968 Winter", 10, "blue"],
+            ["1972 Summer", 23, "blue"],
+            ["1972 Winter", 10, "blue"],
+            ["1976 Summer", 23, "blue"],
+            ["1976 Winter", 10, "blue"],
+            ["1980 Summer", 23, "blue"],
+            ["1980 Winter", 10, "blue"],
+            ["1984 Summer", 25, "blue"],
+            ["1984 Winter", 10, "blue"],
+            ["1988 Summer", 27, "blue"],
+            ["1988 Winter", 10, "blue"],
+            ["1992 Summer", 29, "blue"],
+            ["1992 Winter", 12, "blue"],
+            ["1994 Winter", 12, "blue"],
+            ["1996 Summer", 31, "blue"],
+            ["1998 Winter", 14, "blue"],
+            ["2000 Summer", 34, "blue"],
+            ["2002 Winter", 15, "blue"],
+            ["2004 Summer", 34, "blue"],
+            ["2006 Winter", 15, "blue"],
+            ["2008 Summer", 34, "blue"],
+            ["2010 Winter", 15, "blue"],
+            ["2012 Summer", 32, "blue"],
+            ["2014 Winter", 15, "blue"],
+            ["2016 Summer", 34, "blue"],
+            ]);
+
+            var options = {
+                title: 'Número de modalidades existentes nos Jogos olímpicos por edição',
+                height: 800,
+                width: 1800,
+                hAxis: {
+                title: 'Modalidades Existentes',
+                minValue: 0
+                },
+                vAxis: {
+                title: 'Edição dos Jogos olímpicos'
+                }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+            }
+        </script>
+    </div>
 
 
 <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
