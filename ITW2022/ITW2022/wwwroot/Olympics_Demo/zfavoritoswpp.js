@@ -37,4 +37,4 @@ Dentro do AJAX.done:
 self.loadFavourites();
 
 Data-bind dos favoritos:
-data-bind: click:function(data,event) {$parent.updateFavourites(Id)
+data-bind: "click:function(data,event) {$parent.updateFavourites(Id)}"

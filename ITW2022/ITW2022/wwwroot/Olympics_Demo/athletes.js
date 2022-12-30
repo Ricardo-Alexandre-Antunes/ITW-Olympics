@@ -1,7 +1,7 @@
 // ViewModel KnockOut
 var vm = function () {
     console.log('ViewModel initiated...');
-    //---Variáveis locais
+    //---Variï¿½veis locais
     var self = this;
     self.baseUri = ko.observable('http://192.168.160.58/Olympics/api/athletes');
     //self.baseUri = ko.observable('http://localhost:62595/api/drivers');
@@ -14,6 +14,7 @@ var vm = function () {
     self.totalRecords = ko.observable(50);
     self.hasPrevious = ko.observable(false);
     self.hasNext = ko.observable(false);
+
     self.previousPage = ko.computed(function () {
         return self.currentPage() * 1 - 1;
     }, self);
@@ -187,7 +188,7 @@ function addfav(event) {
         clicked.classList.remove("fa-heart-o");
         clicked.classList.add("fa-heart");
         if (arrayFavsIDS.includes(stelem)) {
-            console.log("já existente no array!")
+            console.log("jï¿½ existente no array!")
         } else {
             arrayFavsIDS.push(stelem)
             localStorage.setItem("IDS", arrayFavsIDS);
@@ -200,7 +201,7 @@ function addfav(event) {
             arrayFavsIDS.splice(arrayFavsIDS.indexOf(stelem), 1)
             localStorage.setItem("IDS", arrayFavsIDS);
         } else {
-            console.log("já existente no array!")
+            console.log("jï¿½ existente no array!")
         }
     }
 
