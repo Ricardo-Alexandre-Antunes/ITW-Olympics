@@ -45,9 +45,9 @@ var vm = function () {
     };
 
     //--- Page Events
-    self.activate = function (id) {
+    self.activate = function (id, sortby = 'NameUp') {
         console.log('CALL: getAthletes...');
-        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
+        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize() + "&sortby=" + sortby;
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
@@ -58,8 +58,36 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalRecords);
-            //self.SetFavourites();
+            self.SetFavourites();
         });
+    };
+    self.activate2 = function (search, page) {
+        console.log('CALL: searchAthletes...');
+        var composedUri = "http://192.168.160.58/Olympics/api/Athletes/SearchByName?q=" + search;
+        ajaxHelper(composedUri, 'GET').done(function (data) {
+            console.log("search Athletes", data);
+            hideLoading();
+            self.records(data.slice(0 + 21 * (page - 1), 21 * page));
+            console.log(self.records())
+            self.totalRecords(data.length);
+            self.currentPage(page);
+            if (page == 1) {
+                self.hasPrevious(false)
+            } else {
+                self.hasPrevious(true)
+            }
+            if (self.records() - 21 > 0) {
+                self.hasNext(true)
+            } else {
+                self.hasNext(false)
+            }
+            if (Math.floor(self.totalRecords() / 21) == 0) {
+                self.totalPages(1);
+            } else {
+                self.totalPages(Math.ceil(self.totalRecords() / 21));
+            }
+        });
+
     };
 
     //--- Internal functions
@@ -110,18 +138,112 @@ var vm = function () {
             }
         }
     };
+    self.pesquisa = function () {
+        self.pesquisado($("#searchbarall").val().toLowerCase());
+        if (self.pesquisado().length > 0) {
+            window.location.href = "athletes.html?search=" + self.pesquisado();
+        }
+    }
 
     //--- start ....
     showLoading();
+    $("#searchbarall").val(undefined);
+    self.pesquisado = ko.observable(getUrlParameter('search'));
     var pg = getUrlParameter('page');
     console.log(pg);
-    if (pg == undefined)
-        self.activate(1);
-    else {
-        self.activate(pg);
+    self.pesquisado = ko.observable(getUrlParameter('search'));
+    self.sortby = ko.observable(getUrlParameter('sortby'));
+    if (self.pesquisado() == undefined) {
+        if (pg == undefined) {
+            if (self.sortby() != undefined) self.activate(1, self.sortby());
+            else self.activate(1)
+        }
+        else {
+            if (self.sortby() != undefined) self.activate(pg, self.sortby());
+            else self.activate(pg)
+        }
+    } else {
+        if (pg == undefined) self.activate2(self.pesquisado(), 1);
+        else self.activate2(self.pesquisado(), pg)
+        self.displayName = 'Founded results for <b>' + self.pesquisado() + '</b>';
     }
+
     console.log("VM initialized!");
+    ko.bindingHandlers.safeSrc = {
+        update: function (element, valueAccessor) {
+            var options = valueAccessor();
+            var src = ko.unwrap(options.src);
+            if (src == null) {
+                $(element).attr('src', ko.unwrap(options.fallback));
+            }
+            $('<img />').attr('src', src).on('load', function () {
+                $(element).attr('src', src);
+            }).on('error', function () {
+                $(element).attr('src', ko.unwrap(options.fallback));
+            });
+
+        }
+    };
 };
+
+$(document).ready(function () {
+    console.log("ready!");
+    ko.applyBindings(new vm());
+});
+
+$(document).ajaxComplete(function (event, xhr, options) {
+    $("#myModal").modal('hide');
+});
+
+    //--- Internal functions
+    function ajaxHelper(uri, method, data) {
+        self.error(''); // Clear error message
+        return $.ajax({
+            type: method,
+            url: uri,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: data ? JSON.stringify(data) : null,
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log("AJAX Call[" + uri + "] Fail...");
+                hideLoading();
+                self.error(errorThrown);
+            }
+        });
+    }
+
+    function sleep(milliseconds) {
+        const start = Date.now();
+        while (Date.now() - start < milliseconds);
+    }
+
+    function showLoading() {
+        $("#myModal").modal('show', {
+            backdrop: 'static',
+            keyboard: false
+        });
+    }
+    function hideLoading() {
+        $('#myModal').on('shown.bs.modal', function (e) {
+            $("#myModal").modal('hide');
+        })
+    }
+
+    function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+        console.log("sPageURL=", sPageURL);
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+    };
+
 
 ko.bindingHandlers.safeSrc = {
     update: function (element, valueAccessor) {

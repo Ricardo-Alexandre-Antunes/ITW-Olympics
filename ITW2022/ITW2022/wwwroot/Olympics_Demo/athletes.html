@@ -48,28 +48,52 @@
         <div class="row small">
             <p class=" col-4 mr-auto pt-2">
                 <span data-bind="html: 'Page: ' + currentPage() + ' of ' + totalPages()"></span><br />
-                <span data-bind="html: 'Games: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
+                <span data-bind="html: 'Athletes: '+ fromRecord() + '-' + toRecord() + ' of ' + totalRecords()"></span>
             </p>
+            <!-- ko ifnot: pesquisado -->
             <div class="col-8 my-0 pt-3">
                 <ul class="pagination float-end">
                     <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
-                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: '../Olympics_Demo/athletes.html?page=' + '1',  rel:'prev'}">⇤</a></li>
-                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: '../Olympics_Demo/athletes.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
+                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './Athletes.html?page=' + '1',  rel:'prev'}">⇤</a></li>
+                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './Athletes.html?page=' + previousPage(),  rel:'prev'}">←</a></li>
                     <!-- /ko -->
                     <!-- ko foreach: pageArray()-->
                     <!-- ko if:$data == $parent.currentPage() -->
                     <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
                     <!-- /ko -->
                     <!-- ko if:$data != $parent.currentPage() -->
-                    <li class="page-item"><a class="page-link" data-bind="attr: { href: '../Olympics_Demo/athletes.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './Athletes.html?page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
                     <!-- /ko -->
                     <!-- /ko -->
                     <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
-                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: '../Olympics_Demo/athletes.html?page=' + nextPage(), rel:'next' }">→</a></li>
-                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: '../Olympics_Demo/athletes.html?page=' + totalPages() }">⇥</a></li>
+                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './Athletes.html?page=' + nextPage(), rel:'next' }">→</a></li>
+                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './Athletes.html?page=' + totalPages() }">⇥</a></li>
                     <!-- /ko -->
                 </ul>
             </div>
+            <!-- /ko -->
+            <!-- ko if: pesquisado -->
+            <div class="col-8 my-0 pt-3">
+                <ul class="pagination float-end">
+                    <!-- ko if: currentPage() > 5 && totalPages() > 10 -->
+                    <li class="page-item float-end"><a class="page-link" title="First Page" data-bind="attr: { href: './Athletes.html?search='+ pesquisado() + '&page=1',  rel:'prev'}">⇤</a></li>
+                    <li class="page-item float-end"><a class="page-link" title="Previous Page" data-bind="attr: { href: './Athletes.html?search='+ pesquisado() + '&page=' + previousPage(),  rel:'prev'}">←</a></li>
+                    <!-- /ko -->
+                    <!-- ko foreach: pageArray()-->
+                    <!-- ko if:$data == $parent.currentPage() -->
+                    <li class="active page-item"><a class="page-link" data-bind="attr: { title:'Current Page ' + $data }, text: $data"></a></li>
+                    <!-- /ko -->
+                    <!-- ko if:$data != $parent.currentPage() -->
+                    <li class="page-item"><a class="page-link" data-bind="attr: { href: './Athletes.html?search='+ $parent.pesquisado() + '&page=' + $data, title:'Goto Page ' + $data }, text:$data"></a></li>
+                    <!-- /ko -->
+                    <!-- /ko -->
+                    <!-- ko if: currentPage() < totalPages() - 4 && totalPages() > 9 -->
+                    <li class="page-item"><a class="page-link" title="Next Page" data-bind="attr: { href: './Athletes.html?search='+ pesquisado() + '&page=' + nextPage(), rel:'next' }">→</a></li>
+                    <li class="page-item"><a class="page-link" title="Last Page" data-bind="attr: { href: './Athletes.html?search='+ pesquisado() + '&page=' + totalPages() }">⇥</a></li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+            <!-- /ko -->
         </div>
         <!-- /ko -->
         <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: records">
@@ -78,7 +102,7 @@
                     <div style="overflow:hidden; height:230px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
                     <div class="card-body">
                         <h6 class="card-title Name" data-bind="text: Name"></h6>
-                        <div class="card-text" >Sex: <span class="Sex" data-bind="text:Sex"></span></div>
+                        <div class="card-text">Sex: <span class="Sex" data-bind="text:Sex"></span></div>
                         <div class="card-text">Best Position: <span data-bind="html: conv(BestPosition)"></span></div>
                     </div>
                     <div class="card-footer">
@@ -86,7 +110,7 @@
                             <a class="btn btn-primary" data-bind="attr: { href:'../Olympics_Demo/athleteDetails.html?id=' + Id }" role="button">More Details...</a>
                         </div>
                     </div>
-                        <div class="text-right position-absolute top-0 end-0" style="position:relative;top: 5px; left: 5px"><i class="fa fa-heart-o fa-lg " onclick="addfav(event)" data-bind="attr : { 'id': 'favourite_' + Id }" title="Selecione para adicionar aos favoritos"></i></div>
+                    <div class="text-right position-absolute top-0 end-0" style="position:relative;top: 5px; left: 5px"><i class="fa fa-heart-o fa-lg " onclick="addfav(event)" data-bind="attr : { 'id': 'favourite_' + Id }" title="Selecione para adicionar aos favoritos"></i></div>
                 </div>
             </div>
         </div>
@@ -108,7 +132,7 @@
         <div style="padding-top:60px"></div>
         <!-- End of Working Area -->
         <nav class="navbar navbar-light bg-light fixed-bottom">
-            <div class="container small" >
+            <div class="container small">
                 <div class="navbar-text">&copy;  Introdução as Tecnologias Web - 2022/23</div>
                 <div class="navbar-text">Made with <i class="fa fa-heart-o text-danger"></i> for U by <a href="mailto:jsp@ua.pt" class="text-decoration-none text-muted">jsp@ua.pt</a>.</div>
                 <div class="navbar-nav">
