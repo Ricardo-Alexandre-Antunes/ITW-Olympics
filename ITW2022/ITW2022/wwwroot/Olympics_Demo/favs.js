@@ -88,7 +88,7 @@ var vm = function() {
         for (e in array) {
             $.ajax({
                 type: "GET",
-                url: "http://192.168.160.58/Formula1/api/Modalities?id=" + array[e],
+                url: "http://192.168.160.58/Olympics/api/Modalities?id=" + array[e],
                 async: false,
                 success: function(data) {
                     temp.push(data)
@@ -131,6 +131,7 @@ var vm = function() {
     }
     self.init()
 }
+
 
 $(document).ready(function() {
     console.log("ready!");
