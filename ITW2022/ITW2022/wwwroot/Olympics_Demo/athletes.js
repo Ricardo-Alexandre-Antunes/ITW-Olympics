@@ -112,7 +112,6 @@ var vm = function () {
             }
         }
     }
-    self.medalhas =
 
     self.updateLocalStorage = (key, data) => {
         localStorage.setItem(key, JSON.stringify(data))
