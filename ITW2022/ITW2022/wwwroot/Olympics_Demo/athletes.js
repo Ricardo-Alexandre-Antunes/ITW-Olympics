@@ -49,7 +49,8 @@ var vm = function () {
         games: [],
         countries: [],
         modalities: [],
-    }
+    };
+
 
     //--- Page Events
     self.activate = function (id) {
@@ -186,16 +187,21 @@ var vm = function () {
             sParameterName = sURLVariables[i].split('=');
 
             if (sParameterName[0] === sParam) {
+                var search = sParameterName[1];
+                document.getElementById("searchbarall").value = search;
                 return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
             }
         }
     };
+
+
+
     self.pesquisa = function () {
         self.pesquisado($("#searchbarall").val().toLowerCase());
         if (self.pesquisado().length > 0) {
             window.location.href = "athletes.html?search=" + self.pesquisado();
         }
-    }
+    };
     
 
     //--- start ....
