@@ -34,6 +34,7 @@ var vm = function () {
             console.log(data.Events);
             var Events = data.Events
             var dict = [];
+            var count = 1;
             for (let i = 0; i < Events.length; i++) {
                 var trinket = Events[i]
                 console.log(trinket)
@@ -47,7 +48,8 @@ var vm = function () {
                     };
                 };
                 if (!(done)) {
-                    dict.push({ 'Sport': trinket.Modality, 'SportList': [trinket] });
+                    dict.push({ 'Id': count, 'Sport': trinket.Modality, 'SportList': [trinket] });
+                    count = count + 1;
                 };
             };
             console.log(dict);

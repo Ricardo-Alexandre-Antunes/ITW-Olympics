@@ -52,19 +52,20 @@
         </div>
         <div class="accordion" id="accordionExample" data-bind="foreach: listerino">
             <div class="accordion-item">
-                <h2 class="accordion-header" data-bind="attr : { id: Sport }">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bind="text:Sport, attr: {'data-bs-target': '#collapse' + Sport, 'aria-controls': 'collapse' + Sport}">
+                <h2 class="accordion-header" data-bind="attr : { id: Id }">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bind="text:Sport, attr: {'data-bs-target': '#collapse' + Id, 'aria-controls': 'collapse' + Id}">
                     </button>
                 </h2>
-                <div class="accordion-collapse collapse" data-bs-parent="#accordionExample" data-bind="attr: {'aria-labelledby': Sport, id: 'collapse' + Sport}">
+                <div class="accordion-collapse collapse" data-bs-parent="#accordionExample" data-bind="attr: {'aria-labelledby': Id, id: 'collapse' + Id}">
                     <div class="accordion-body">
                         <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: SportList">
                             <div class="col">
                                 <div class="card">
+                                    <!-- ko if:Photo!=null-->
                                     <div style="overflow:hidden; height:100%"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                                    <!-- /ko-->
                                     <div class="card-body">
                                         <h6 class="card-title Name" data-bind="text: Name"></h6>
-                                        <div class="card-text">Results: <span class="Sex" data-bind="text:Results"></span></div>
                                     </div>
                                     <div class="card-footer">
                                         <div class="col">
