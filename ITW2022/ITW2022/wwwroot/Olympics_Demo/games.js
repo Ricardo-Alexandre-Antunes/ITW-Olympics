@@ -42,6 +42,13 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+    self.metaData = {
+        atletas: [],
+        comps: [],
+        games: [],
+        countries: [],
+        modalities: [],
+    }
 
     //--- Page Events
     self.activate = function (id) {
@@ -57,9 +64,83 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalRecords);
-            //self.SetFavourites();
+            for (var i = 0; i <= data.PageSize; i++){
+                self.updateheart(data.List[i].Id, 'games')
+            }
         });
     };
+
+    self.activate2 = function (search, page) {
+        console.log('CALL: searchGames...');
+        var composedUri = "http://192.168.160.58/Olympics/api/Games/SearchByName?q=" + search;
+        ajaxHelper(composedUri, 'GET').done(function (data) {
+            console.log("search Games", data);
+            hideLoading();
+            self.records(data.slice(0 + 21 * (page - 1), 21 * page));
+            console.log(self.records())
+            self.totalRecords(data.length);
+            self.currentPage(page);
+            if (page == 1) {
+                self.hasPrevious(false)
+            } else {
+                self.hasPrevious(true)
+            }
+            if (self.records() - 21 > 0) {
+                self.hasNext(true)
+            } else {
+                self.hasNext(false)
+            }
+            if (Math.floor(self.totalRecords() / 21) == 0) {
+                self.totalPages(1);
+            } else {
+                self.totalPages(Math.ceil(self.totalRecords() / 21));
+            }
+            console.log(self.records()[0].Id)
+            for (var i = 0; i <= self.records().length; i++){
+                self.updateheart((self.records()[i]).Id, 'games')
+            }  
+        });
+    
+    };
+    
+    self.init = function() {
+        for (let k in self.metaData) {
+            if (localStorage.getItem(k) != undefined) {
+                self.metaData[k] = JSON.parse(localStorage.getItem(k))
+            } else {
+                self.metaData[k] = []
+            }
+        }
+    }
+
+    self.updateLocalStorage = (key, data) => {
+        localStorage.setItem(key, JSON.stringify(data))
+        console.log(data)
+    }
+
+    self.updateMetaData = function(id, name) {
+        //Adicionar
+        console.log(self.metaData.name)
+        if (self.metaData[name].includes(String(id)) == false) {
+            self.metaData[name].push(String(id))
+            self.updateLocalStorage(name, self.metaData[name])
+        } else {
+            //Remover
+            self.metaData[name].splice(self.metaData[name].indexOf(String(id)), 1)
+            self.updateLocalStorage(name, self.metaData[name])
+        }
+        self.updateheart(id, name)
+    }
+
+    self.updateheart = function(id, name){
+        console.log(self.metaData[name].includes(String(id)))
+        if (self.metaData[name].includes(String(id)) == true) {
+            $('.'+id).removeClass('fa fa-heart-o')
+            $('.'+id).addClass('fa fa-heart')
+        } else {
+            $('.'+id).removeClass('fa fa-heart')
+            $('.'+id).addClass('fa fa-heart-o')
+    }}
 
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
@@ -110,23 +191,39 @@ var vm = function () {
         }
     };
 
+    self.pesquisa = function () {
+        self.pesquisado($("#searchbarall").val().toLowerCase());
+        if (self.pesquisado().length > 0) {
+            window.location.href = "games.html?search=" + self.pesquisado();
+        }
+    }
+
     //--- start ....
     showLoading();
+    self.init()
+    $("#searchbarall").val(undefined);
     var pg = getUrlParameter('page');
     console.log(pg);
-    if (pg == undefined)
-        self.activate(1);
-    else {
-        self.activate(pg);
+    self.pesquisado = ko.observable(getUrlParameter('search'));
+    self.sortby = ko.observable(getUrlParameter('sortby'));
+    self.displayName = 'Games List';
+    if (self.pesquisado() == undefined) {
+        if (pg == undefined) {
+            if (self.sortby() != undefined) self.activate(1, self.sortby());
+            else self.activate(1)
+        }
+        else {
+            if (self.sortby() != undefined) self.activate(pg, self.sortby());
+            else self.activate(pg)
+        }
+    } else {
+        if (pg == undefined) self.activate2(self.pesquisado(), 1);
+        else self.activate2(self.pesquisado(), pg)
+        self.displayName = 'Founded results for <b>' + self.pesquisado() + '</b>';
     }
-    console.log("VM initialized!");
 };
 
 $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
-
-$(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-})
