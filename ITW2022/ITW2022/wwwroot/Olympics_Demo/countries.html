@@ -30,6 +30,10 @@
                     <li class="nav-item"><a class="nav-link" aria-current="page" href="faq.html"><i class="fa fa-question-circle text-secondary"></i> Faq</a></li>
                 </ul>
             </div>
+            <form class="d-flex">
+                <input class="form-control me-2" id="searchbarall" type="search" placeholder="Search" onkeyup="name_search()" aria-label="Search">
+                <button class="btn btn-outline-success" id="lupadef" data-bind="click:pesquisa" type="submit">Search</button>
+            </form>
         </div>
     </nav>
     <!-- Working Area -->
@@ -77,41 +81,11 @@
                             <a class="btn btn-primary" data-bind="attr: { href:'../Olympics_Demo/countryDetails.html?id=' + Id }" role="button">More Details...</a>
                         </div>
                     </div>
-                        <div class="text-right position-absolute top-0 end-0" style="position:relative;top: 5px; left: 5px"><i class="fa fa-heart-o fa-lg " onclick="addfav(event)" data-bind="attr : { 'id': 'favourite_' + Id }" title="Selecione para adicionar aos favoritos"></i></div>
+                    <div class="text-right position-absolute top-0 end-0" style="position:relative;top: 5px; left: 5px"><button type="button" class="btn btn-default btn-sm" id="countries-button" data-bind="click:$parent.updateMetaData.bind($data,Id,'countries')" title="Selecione para adicionar aos favoritos"><i aria-hidden="true" data-bind="class: 'fa fa-heart-o ' + Id"></i></button></div>
                 </div>
             </div>
         </div>
     </div>
-    <!--
-        <table class="table table-striped table-sm small" id="tab1">
-            <thead class="bg-dark text-light">
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">IOC</th>
-                    <th scope="col">Flag</th>
-                    <th scope="col" class="text-right"></th>
-                </tr>
-            </thead>
-            <tbody data-bind="foreach: records">
-                <tr>
-                    <td class="align-middle" data-bind="text:Id"></td>
-                    <td class="align-middle" data-bind="text:Name"></td>
-                    <td class="align-middle" data-bind="text:IOC"></td>
-                    <td class="align-middle"><img class="img" style="height:35px" data-bind="attr:{src: Flag}"></td>
-                    <td class="text-end">
-                        <a class="btn btn-default btn-light btn-xs" data-bind="attr: { href:'./countryDetails.html?id=' + Id }">
-                            <i class="fa fa-eye" title="Selecione para ver detalhes"></i>
-                        </a>
-
-                        <button class="btn" onclick="addfav(event)" data-bind="attr : { 'id': 'favourite_' + Id }" id="heart" title="Selecione para adicionar aos favoritos"><i class="fa fa-heart-o"></i></button>
-
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

@@ -44,7 +44,7 @@ var vm = function () {
         return list;
     };
     self.metaData = {
-        ateletas: [],
+        atletas: [],
         comps: [],
         games: [],
         countries: [],
@@ -66,7 +66,7 @@ var vm = function () {
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalRecords);
             for (var i = 0; i <= data.PageSize; i++){
-                self.updateheart(data.List[i].Id, 'ateletas')
+                self.updateheart(data.List[i].Id, 'atletas')
             } 
         });
     };
@@ -97,7 +97,7 @@ var vm = function () {
             }
             console.log(self.records()[0].Id)
             for (var i = 0; i <= self.records().length; i++){
-                self.updateheart((self.records()[i]).Id, 'ateletas')
+                self.updateheart((self.records()[i]).Id, 'atletas')
             }  
         });
 
