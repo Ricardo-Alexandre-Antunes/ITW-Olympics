@@ -15,6 +15,7 @@ var vm = function () {
     self.Events = ko.observable('');
     self.Participant = ko.observable('');
     self.Organizer = ko.observableArray('');
+    self.listerino = ko.observableArray('')
 
     //--- Page Events
     self.activate = function (id) {
@@ -30,8 +31,30 @@ var vm = function () {
             self.Events(data.Events);
             self.Participant(data.Participant);
             self.Organizer(data.Organizer);
+            console.log(data.Events);
+            var Events = data.Events
+            var dict = [];
+            for (let i = 0; i < Events.length; i++) {
+                var trinket = Events[i]
+                console.log(trinket)
+                var done = false
+                for (let k = 0; k < dict.length; k++) {
+                    if (dict[k].Sport == trinket.Modality) {
+                        done = true;
+                        console.log(dict[k].SportList)
+                        var list = dict[k].SportList
+                        list.push(trinket);
+                    };
+                };
+                if (!(done)) {
+                    dict.push({ 'Sport': trinket.Modality, 'SportList': [trinket] });
+                };
+            };
+            console.log(dict);
+            self.listerino(dict)
         });
     };
+
 
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
@@ -105,6 +128,13 @@ ko.bindingHandlers.safeSrc = {
     }
 };
 
+self.refreshVar = ko.observable(true);
+self.refreshList = function (list) {
+    self.refreshVar(false);
+    self.Events(list);
+    self.refreshVar(true);
+};
+
 $(document).ready(function () {
     console.log("document.ready!");
     ko.applyBindings(new vm());
@@ -112,4 +142,9 @@ $(document).ready(function () {
 
 $(document).ajaxComplete(function (event, xhr, options) {
     $("#myModal").modal('hide');
-})
+});
+
+$(document).ajaxComplete(function (data) {
+    list = data
+    console.log(list)
+});
