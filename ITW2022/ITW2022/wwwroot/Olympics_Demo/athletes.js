@@ -43,11 +43,18 @@ var vm = function () {
             list.push(i + step);
         return list;
     };
+    self.metaData = {
+        ateletas: [],
+        comps: [],
+        games: [],
+        countries: [],
+        modalities: [],
+    }
 
     //--- Page Events
-    self.activate = function (id, sortby = 'NameUp') {
+    self.activate = function (id) {
         console.log('CALL: getAthletes...');
-        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize() + "&sortby=" + sortby;
+        var composedUri = self.baseUri() + "?page=" + id + "&pageSize=" + self.pagesize();
         ajaxHelper(composedUri, 'GET').done(function (data) {
             console.log(data);
             hideLoading();
@@ -58,7 +65,9 @@ var vm = function () {
             self.pagesize(data.PageSize)
             self.totalPages(data.TotalPages);
             self.totalRecords(data.TotalRecords);
-            self.SetFavourites();
+            for (var i = 0; i <= data.PageSize; i++){
+                self.updateheart(data.List[i].Id, 'ateletas')
+            } 
         });
     };
     self.activate2 = function (search, page) {
@@ -86,9 +95,53 @@ var vm = function () {
             } else {
                 self.totalPages(Math.ceil(self.totalRecords() / 21));
             }
+            console.log(self.records()[0].Id)
+            for (var i = 0; i <= self.records().length; i++){
+                self.updateheart((self.records()[i]).Id, 'ateletas')
+            }  
         });
 
     };
+
+    self.init = function() {
+        for (let k in self.metaData) {
+            if (localStorage.getItem(k) != undefined) {
+                self.metaData[k] = JSON.parse(localStorage.getItem(k))
+            } else {
+                self.metaData[k] = []
+            }
+        }
+    }
+    self.medalhas =
+
+    self.updateLocalStorage = (key, data) => {
+        localStorage.setItem(key, JSON.stringify(data))
+        console.log(data)
+    }
+
+    self.updateMetaData = function(id, name) {
+        //Adicionar
+        console.log(self.metaData.name)
+        if (self.metaData[name].includes(String(id)) == false) {
+            self.metaData[name].push(String(id))
+            self.updateLocalStorage(name, self.metaData[name])
+        } else {
+            //Remover
+            self.metaData[name].splice(self.metaData[name].indexOf(String(id)), 1)
+            self.updateLocalStorage(name, self.metaData[name])
+        }
+        self.updateheart(id, name)
+    }
+
+    self.updateheart = function(id, name){
+        console.log(self.metaData[name].includes(String(id)))
+        if (self.metaData[name].includes(String(id)) == true) {
+            $('.'+id).removeClass('fa fa-heart-o')
+            $('.'+id).addClass('fa fa-heart')
+        } else {
+            $('.'+id).removeClass('fa fa-heart')
+            $('.'+id).addClass('fa fa-heart-o')
+    }}
 
     //--- Internal functions
     function ajaxHelper(uri, method, data) {
@@ -144,15 +197,17 @@ var vm = function () {
             window.location.href = "athletes.html?search=" + self.pesquisado();
         }
     }
+    
 
     //--- start ....
     showLoading();
+    self.init()
     $("#searchbarall").val(undefined);
-    self.pesquisado = ko.observable(getUrlParameter('search'));
     var pg = getUrlParameter('page');
     console.log(pg);
     self.pesquisado = ko.observable(getUrlParameter('search'));
     self.sortby = ko.observable(getUrlParameter('sortby'));
+    self.displayName = 'Athletes List';
     if (self.pesquisado() == undefined) {
         if (pg == undefined) {
             if (self.sortby() != undefined) self.activate(1, self.sortby());
@@ -168,98 +223,9 @@ var vm = function () {
         self.displayName = 'Founded results for <b>' + self.pesquisado() + '</b>';
     }
 
-    console.log("VM initialized!");
-    ko.bindingHandlers.safeSrc = {
-        update: function (element, valueAccessor) {
-            var options = valueAccessor();
-            var src = ko.unwrap(options.src);
-            if (src == null) {
-                $(element).attr('src', ko.unwrap(options.fallback));
-            }
-            $('<img />').attr('src', src).on('load', function () {
-                $(element).attr('src', src);
-            }).on('error', function () {
-                $(element).attr('src', ko.unwrap(options.fallback));
-            });
 
-        }
-    };
 };
 
-$(document).ready(function () {
-    console.log("ready!");
-    ko.applyBindings(new vm());
-});
-
-$(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-});
-
-    //--- Internal functions
-    function ajaxHelper(uri, method, data) {
-        self.error(''); // Clear error message
-        return $.ajax({
-            type: method,
-            url: uri,
-            dataType: 'json',
-            contentType: 'application/json',
-            data: data ? JSON.stringify(data) : null,
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log("AJAX Call[" + uri + "] Fail...");
-                hideLoading();
-                self.error(errorThrown);
-            }
-        });
-    }
-
-    function sleep(milliseconds) {
-        const start = Date.now();
-        while (Date.now() - start < milliseconds);
-    }
-
-    function showLoading() {
-        $("#myModal").modal('show', {
-            backdrop: 'static',
-            keyboard: false
-        });
-    }
-    function hideLoading() {
-        $('#myModal').on('shown.bs.modal', function (e) {
-            $("#myModal").modal('hide');
-        })
-    }
-
-    function getUrlParameter(sParam) {
-        var sPageURL = window.location.search.substring(1),
-            sURLVariables = sPageURL.split('&'),
-            sParameterName,
-            i;
-        console.log("sPageURL=", sPageURL);
-        for (i = 0; i < sURLVariables.length; i++) {
-            sParameterName = sURLVariables[i].split('=');
-
-            if (sParameterName[0] === sParam) {
-                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-            }
-        }
-    };
-
-
-ko.bindingHandlers.safeSrc = {
-    update: function (element, valueAccessor) {
-        var options = valueAccessor();
-        var src = ko.unwrap(options.src);
-        if (src == null) {
-            $(element).attr('src', ko.unwrap(options.fallback));
-        }
-        $('<img />').attr('src', src).on('load', function () {
-            $(element).attr('src', src);
-        }).on('error', function () {
-            $(element).attr('src', ko.unwrap(options.fallback));
-        });
-
-    }
-};
 
 function conv(BestPosition) {
     if (BestPosition == 1)
@@ -276,77 +242,3 @@ $(document).ready(function () {
     console.log("ready!");
     ko.applyBindings(new vm());
 });
-
-$(document).ajaxComplete(function (event, xhr, options) {
-    $("#myModal").modal('hide');
-});
-
-var flag = true;
-var arrayFavsIDS = new Array();
-
-var arrayLocalStorage = new Array(localStorage.getItem("IDS"));
-
-arrayLocalStorage = arrayLocalStorage[0].split(",");
-
-function addfav(event) {
-    console.log("iM IN")
-    var clicked = event.currentTarget;
-    var outElemtn = clicked.parentElement.parentElement.parentElement;
-
-    console.log("heyheyhey" + $("#tab1").children("td:first"));
-
-
-    var infoTr = new Array(outElemtn.innerText.split("    "));
-    var stelem = infoTr[0][0];
-    console.log("abacate " + stelem);
-
-
-    actualArray = arrayLocalStorage;
-
-    clicked.classList.remove("fa-heart-o");
-    clicked.classList.add("fa-heart");
-
-    if (flag) {
-        clicked.classList.remove("fa-heart-o");
-        clicked.classList.add("fa-heart");
-        if (arrayFavsIDS.includes(stelem)) {
-            console.log("j� existente no array!")
-        } else {
-            arrayFavsIDS.push(stelem)
-            localStorage.setItem("IDS", arrayFavsIDS);
-        }
-
-    } else {
-        clicked.classList.add("fa-heart-o");
-        clicked.classList.remove("fa-heart");
-        if (arrayFavsIDS.includes(stelem)) {
-            arrayFavsIDS.splice(arrayFavsIDS.indexOf(stelem), 1)
-            localStorage.setItem("IDS", arrayFavsIDS);
-        } else {
-            console.log("j� existente no array!")
-        }
-    }
-
-    flag = !flag;
-    console.log(arrayFavsIDS);
-}
-
-function name_search() {
-    let input = document.getElementById('searchbar').value
-    input = input.toLowerCase();
-    console.log(input)
-    let x = document.getElementsByClassName('Name');
-    console.log(x)
-
-    for (i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].parentElement.parentElement.parentElement.style.display = "none";
-        }
-        else {
-            x[i].parentElement.parentElement.parentElement.style.display = "inline"
-        }
-    }
-};
-
-
-
