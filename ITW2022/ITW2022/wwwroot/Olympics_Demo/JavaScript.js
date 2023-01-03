@@ -116,3 +116,13 @@ ko.bindingHandlers.safeSrc = {
 
     }
 };
+
+function conv(BestPosition) {
+	if (BestPosition == 1)
+		return '<img src="goldmedal.png" style="height: 30px; width: 30px">';
+	else if (BestPosition == 2)
+		return '<img src="silvermedal.png" style="height: 30px; width: 30px">';
+	else if (BestPosition == 3)
+		return '<img src="bronzemedal.png" style="height: 30px; width: 30px">';
+	else return '<img src="nomedal.png" style="height: 30px; width: 30px">';
+}; 

@@ -20,6 +20,7 @@ var vm = function () {
     self.Modalities = ko.observable('');
     self.Competitions = ko.observable('');
     self.Medals = ko.observable('');
+    self.listerino = ko.observable('');
 
 
     //--- Page Events
@@ -41,6 +42,30 @@ var vm = function () {
             self.Modalities(data.Modalities);
             self.Competitions(data.Competitions);
             self.Medals(data.Medals);
+            var Events = data.Competitions;
+            console.log(Events);
+            var dict = [];
+            console.log(dict);
+            var count = 1;
+            for (let i = 0; i < Events.length; i++) {
+                var trinket = Events[i]
+                console.log(trinket)
+                var done = false
+                for (let k = 0; k < dict.length; k++) {
+                    if (dict[k].Sport == trinket.Modality) {
+                        done = true;
+                        console.log(dict[k].SportList)
+                        var list = dict[k].SportList
+                        list.push(trinket);
+                    };
+                };
+                if (!(done)) {
+                    dict.push({ 'Id': count, 'Sport': trinket.Modality, 'SportList': [trinket] });
+                    count = count + 1;
+                };
+            };
+            console.log(dict);
+            self.listerino(dict)
 
         });
     };
