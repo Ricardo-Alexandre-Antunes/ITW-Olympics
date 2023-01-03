@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="./giphy.gif" height="24" /></a>
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="../img/giphy.gif" height="24" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,7 +56,7 @@
                 <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach:atletasData">
                     <div class="col">
                         <div class="card">
-                            <div style="overflow:hidden; height:230px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                            <div style="overflow:hidden; height:230px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: '../img/silhouette_medium_large_large.png'}"></div>
                             <div class="card-body">
                                 <h6 class="card-title Name" data-bind="text: Name"></h6>
                             </div>
@@ -74,7 +74,7 @@
                 <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: compsData">
                     <div class="col">
                         <div class="card">
-                            <div style="overflow:hidden; min-width: 100% ; height: 150px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                            <div style="overflow:hidden; min-width: 100% ; height: 150px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: '../img/silhouette_medium_large_large.png'}"></div>
                             <div class="card-body">
                                 <h6 class="card-title" data-bind="text: Name"></h6>
                             </div>
@@ -92,7 +92,7 @@
                 <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: gamesData">
                     <div class="col">
                         <div class="card">
-                            <div style="overflow:hidden; min-width: 100% ; height: 150px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                            <div style="overflow:hidden; min-width: 100% ; height: 150px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Logo, fallback: '../img/silhouette_medium_large_large.png'}"></div>
                             <div class="card-body">
                                 <h6 class="card-title" data-bind="text: Name"></h6>
                             </div>
@@ -110,7 +110,7 @@
                 <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: countriesData">
                     <div class="col">
                         <div class="card">
-                            <div style="overflow:hidden; min-width: 100% ; height: 150px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Flag, fallback: 'silhouette_medium_large_large.png'}"></div>
+                            <div style="overflow:hidden; min-width: 100% ; height: 150px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Flag, fallback: '../img/silhouette_medium_large_large.png'}"></div>
                             <div class="card-body">
                                 <h6 class="card-title" data-bind="text: Name"></h6>
                             </div>
@@ -128,7 +128,7 @@
                 <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: modalitiesData">
                     <div class="col">
                         <div class="card">
-                            <div style="overflow:hidden; min-width: 100% ; height: 230px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                            <div style="overflow:hidden; min-width: 100% ; height: 230px;"><img class="card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: '../img/silhouette_medium_large_large.png'}"></div>
                             <div class="card-body">
                                 <h6 class="card-title" data-bind="text: Name"></h6>
                             </div>

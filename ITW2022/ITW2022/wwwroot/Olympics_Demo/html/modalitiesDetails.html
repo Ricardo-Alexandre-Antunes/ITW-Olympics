@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="./giphy.gif" height="24" /></a>
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="../img/giphy.gif" height="24" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,7 +35,7 @@
     <!-- Work Area-->
     <div class="container">
         <div class="py-2 border-bottom mb-3">
-            <h2 data-bind="text:Name() +' [' + Id() + ']'"></h2>
+            <h2 data-bind="text:Name()"></h2>
         </div>
         <!-- ko if:Name().length > 0 -->
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -66,14 +66,14 @@
                     <div class="col">
                         <div class="card">
                             <!-- ko if:Photo!=null-->
-                            <div style="overflow:hidden; height:150px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: 'silhouette_medium_large_large.png'}"></div>
+                            <div style="overflow:hidden; height:150px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Photo, fallback: '../img/silhouette_medium_large_large.png'}"></div>
                             <!-- /ko-->
                             <div class="card-body">
                                 <h6 class="card-title Name" data-bind="text: Name"></h6>
                             </div>
                             <div class="card-footer">
                                 <div class="col">
-                                    <a class="btn btn-primary" data-bind="attr: { href:'../Olympics_Demo/competitionDetails.html?id=' + Id }" role="button">More Details...</a>
+                                    <a class="btn btn-primary" data-bind="attr: { href:'competitionDetails.html?id=' + Id }" role="button">More Details...</a>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">
-                        <img src="140398.ico" height="30" /> Loading data...
+                        <img src="../img/140398.ico" height="30" /> Loading data...
                     </h5>
                 </div>
                 <div class="modal-body text-center">

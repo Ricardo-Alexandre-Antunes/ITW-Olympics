@@ -9,6 +9,7 @@
   <ItemGroup>
     <Content Remove="wwwroot\Olympics_Demo\gameFull.html" />
     <Content Remove="wwwroot\Olympics_Demo\gameFull.js" />
+    <Content Remove="wwwroot\Olympics_Demo\html\countryDetails.html~RFcd13467.TMP" />
     <Content Remove="wwwroot\Olympics_Demo\wwwroot\countryDetails.html" />
     <Content Remove="wwwroot\Olympics_Demo\wwwroot\countryDetails.js" />
   </ItemGroup>
