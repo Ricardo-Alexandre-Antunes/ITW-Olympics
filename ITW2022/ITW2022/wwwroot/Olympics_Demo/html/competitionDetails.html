@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW 2022/23 - Olympic Games edition Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="../wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../wwwroot/lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../myCSS.css" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="../img/giphy.gif" height="24" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="statistics.html"><i class="fa fa-line-chart text-secondary"></i> Statistics</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="faq.html"><i class="fa fa-question-circle text-secondary"></i> Faq</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favs.html"><i style="color: red;" class="fa fa-heart"></i> Favorites</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Work Area-->
+    <div class="container">
+        <div class="py-2 border-bottom mb-3">
+            <h2 data-bind="text:Name()"></h2>
+        </div>
+        <!-- ko if:Name().length > 0 -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Participations</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row border-bottom mx-0 my-1">
+                    <div class="col-2">Competition Id</div><div class="col-10" data-bind="text: Id"></div>
+                </div>
+                <div class="row border-bottom mx-0  my-1">
+                    <div class="col-2">Name</div><div class="col-10" data-bind="text: Name"></div>
+                </div>
+                <div class="row border-bottom mx-0  my-1">
+                    <div class="col-2">Modality Id</div><div class="col-10" data-bind="text: ModalityId"></div>
+                </div>
+                <div class="row border-bottom mx-0  my-1">
+                    <div class="col-2">Modality</div>
+                    <div class="col-10" data-bind="text: Modality"></div>
+                </div>
+                <div class="row border-bottom mx-0  my-1" data-bind="visible: Photo() != '' && Photo() != null">
+                    <div class="col-2">Photo</div><div class="small col-10">
+                        <img class="img-thumbnail" data-bind="attr:{src: Photo}"><br /><i class="fa fa-link"></i><br />
+                        [<a class="link-dark text-decoration-none" data-bind="attr: { href: Photo }, text: Photo" target="_blank"></a>]
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row row-cols-1 row-cols-md-5 g-4" data-bind="foreach: Participant">
+                    <div class="col">
+                        <div class="card">
+                            <div style="overflow:hidden; height:100px"><img class="photo card-img-top img-fluid" data-bind="safeSrc:{src: Logo, fallback: '../img/silhouette_medium_large_large.png'}"></div>
+                            <div class="card-body">
+                                <h6 class="card-title Name" data-bind="text: Name"></h6>
+                                <div class="card-text">Host: <span class="Sex" data-bind="text:CountryName"></span></div>
+                                <div class="card-text">City: <span data-bind="text:CityName "></span></div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="col">
+                                    <a class="btn btn-primary" data-bind="attr: { href:'gameDetails.html?id=' + Id }" role="button">More Details...</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        
+
+        <!-- /ko -->
+
+
+        <a href="./competitions.html" class="btn btn-default btn-sm small"><i class="fa fa-list"></i> Back to List</a>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="../img/140398.ico" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/69fa44d0-81b5-47a5-a4d2-db7d760e93c6/d53kvru-6dd0d8f7-fc76-418f-92b4-de8aa1d3e619.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY5ZmE0NGQwLTgxYjUtNDdhNS1hNGQyLWRiN2Q3NjBlOTNjNlwvZDUza3ZydS02ZGQwZDhmNy1mYzc2LTQxOGYtOTJiNC1kZThhYTFkM2U2MTkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.edfJBsURCWYSvKczT9g7VAkL8fYn5SyzQeUwXOapYOs" height="150" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Work Area -->
+    <div class="footer" style="margin-top:30px">
+        <!-- Footer -->
+        <footer class="bg-white text-center text-white mt-2">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <a href="#nav" class="sr-only sr-only-focusable nav-link mb-3" style="color: grey; font-size: larger">Skip footer</a
+            ><div class=""><span style="color: gray;">© Introdução as Tecnologias Web - 2022/23</span></div>
+            <!-- Facebook -->
+            <a
+              class="btn btn-outline-dark btn-floating m-1"
+              href="https://www.facebook.com/olympics/"
+              role="button"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+    
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://twitter.com/Olympics?s=20&t=_Qt9YfBvdOxF0QOsVN6WDg" role="button"><i class="fa fa-twitter"></i
+            ></a>
+    
+                    <!-- Google -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://olympics.com/" role="button"><i class="fa fa-google"></i
+            ></a>
+    
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/olympics/" role="button"><i class="fa fa-instagram"></i
+            ></a>
+    
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://ch.linkedin.com/company/international-olympic-committee" role="button"><i class="fa fa-linkedin"></i
+            ></a>
+            <div class=""><span style="color: gray;"><a href="https://www.ua.pt/" style=" text-decoration: none; color: inherit;">Universidade de Aveiro</a></span></div>
+                </section>
+                <!-- Section: Social media -->
+    
+                <!-- Section: Form -->
+            </div>
+            <!-- Grid container -->
+        </footer>
+      </div>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../wwwroot/lib/knockout/dist/knockout-latest.min.js"></script>
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/competitionDetails.js"></script>
+    <script src="../js/JavaScript.js"></script>
+</body>
+</html>

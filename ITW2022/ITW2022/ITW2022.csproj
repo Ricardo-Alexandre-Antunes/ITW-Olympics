@@ -14,27 +14,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Olympics_Demo\athleteDetails.html" />
-    <None Include="wwwroot\Olympics_Demo\athleteDetails.js" />
-    <None Include="wwwroot\Olympics_Demo\athletes.html" />
-    <None Include="wwwroot\Olympics_Demo\athletes.js" />
-    <None Include="wwwroot\Olympics_Demo\competitions.html" />
-    <None Include="wwwroot\Olympics_Demo\competitions.js" />
-    <None Include="wwwroot\Olympics_Demo\countries.html" />
-    <None Include="wwwroot\Olympics_Demo\countries.js" />
-    <None Include="wwwroot\Olympics_Demo\gameFull.html" />
-    <None Include="wwwroot\Olympics_Demo\gameDetails.html" />
-    <None Include="wwwroot\Olympics_Demo\gameDetails.js" />
-    <None Include="wwwroot\Olympics_Demo\gameFull.js" />
-    <None Include="wwwroot\Olympics_Demo\games.html" />
-    <None Include="wwwroot\Olympics_Demo\games.js" />
-    <None Include="wwwroot\Olympics_Demo\index.html" />
-    <None Include="wwwroot\Olympics_Demo\modalities.html" />
-    <None Include="wwwroot\Olympics_Demo\modalities.js" />
-    <None Include="wwwroot\Olympics_Demo\myCSS.css" />
-    <None Include="wwwroot\Olympics_Demo\myScript.js" />
-    <None Include="wwwroot\Olympics_Demo\countryDetails.html" />
-    <None Include="wwwroot\Olympics_Demo\countryDetails.js" />
+    <None Include="wwwroot\Olympics_Demo\js\athleteDetails.js" />
+    <None Include="wwwroot\Olympics_Demo\html\athletes.html" />
+    <None Include="wwwroot\Olympics_Demo\js\athletes.js" />
+    <None Include="wwwroot\Olympics_Demo\html\competitions.html" />
+    <None Include="wwwroot\Olympics_Demo\js\competitions.js" />
+    <None Include="wwwroot\Olympics_Demo\html\countries.html" />
+    <None Include="wwwroot\Olympics_Demo\js\countries.js" />
+    <None Include="wwwroot\Olympics_Demo\html\gameFull.html" />
+    <None Include="wwwroot\Olympics_Demo\js\gameDetails.js" />
+    <None Include="wwwroot\Olympics_Demo\js\gameFull.js" />
+    <None Include="wwwroot\Olympics_Demo\html\games.html" />
+    <None Include="wwwroot\Olympics_Demo\js\games.js" />
+    <None Include="wwwroot\Olympics_Demo\html\index.html" />
+    <None Include="wwwroot\Olympics_Demo\html\modalities.html" />
+    <None Include="wwwroot\Olympics_Demo\js\modalities.js" />
+    <None Include="wwwroot\Olympics_Demo\css\myCSS.css" />
+    <None Include="wwwroot\Olympics_Demo\js\myScript.js" />
+    <None Include="wwwroot\Olympics_Demo\html\countryDetails.html" />
+    <None Include="wwwroot\Olympics_Demo\js\countryDetails.js" />
   </ItemGroup>
 
   <ItemGroup>
