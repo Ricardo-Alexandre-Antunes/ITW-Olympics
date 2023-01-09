@@ -1,0 +1,186 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW - Olympics test App</title>
+    <link rel="icon" type="image/x-icon" href="../Olympics_Demo/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="../wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../wwwroot/lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/myCSS.css" />
+    <style>
+        .carousel {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .carousel-item {
+            z-index: -100;
+            height: 650px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+            .carousel-item:nth-child(1) {
+                background-image: url('https://img.olympicchannel.com/images/image/private/f_auto/t_s_pog_staticContent_hero_sm_2x/primary/itgo4fceaazaicrrl7b2');
+            }
+
+            .carousel-item:nth-child(2) {
+                background-image: url('https://aroundtherings.files.wordpress.com/2012/01/hockey-skills-scoreboard.jpg');
+            }
+
+            .carousel-item:nth-child(3) {
+                background-image: url('https://www.ihf.info/sites/default/files/styles/news_details/public/2021-07/POR%20OQT_1440x600.jpg?itok=FHeuNdwA');
+            }
+
+            .carousel-item:nth-child(4) {
+                background-image: url('https://deadline.com/wp-content/uploads/2021/07/AP16219079090925-e1626311867673.jpg');
+            }
+
+            .carousel-item:nth-child(5) {
+                background-image: url('https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt7ab8180816361c22/61043eded2f2a64e4e6bc77d/95f1dc3691a84312237635873cfb0622633f8cfb.jpg');
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="../img/giphy.gif" height="29" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="statistics.html"><i class="fa fa-line-chart text-secondary"></i> Statistics</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="faq.html"><i class="fa fa-question-circle text-secondary"></i> Faq</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favs.html"><i style="color: red;" class="fa fa-heart"></i> Favorites</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Working Area -->
+    <div id="myCarousel" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="athletes.html">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="display-1">Athletes</div>
+                        <p>Discover every athlete that participated in any Olympic Edition - ever!</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="competitions.html">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="display-1">Competitions</div>
+                        <p>Search through every event that ever existed in the Olympic games - even if just once!</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="carousel-item">
+                <a href="countries.html">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="display-1">Countries</div>
+                        <p>Scout every country that ever took part in the Olympic Games - even countries that no longer exist!</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="carousel-item">
+                <a href="games.html">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="display-1">Games</div>
+                        <p>Access every Olympic Games Edition ever made, from 1896 to 2016!</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="carousel-item">
+                <a href="modalities.html">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="display-1">Modalities</div>
+                        <p>Take a look at every Modality displayed in the Olympics - from fan-favourite Football to less known Art Competitions!</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- End of Working Area -->
+    <div class="footer" style="margin-top:30px">
+        <!-- Footer -->
+        <footer class="bg-white text-center text-white mt-2">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <a href="#nav" class="sr-only sr-only-focusable nav-link mb-3" style="color: grey; font-size: larger">Skip footer</a
+            ><div class=""><span style="color: gray;">© Introdução as Tecnologias Web - 2022/23</span></div>
+            <!-- Facebook -->
+            <a
+              class="btn btn-outline-dark btn-floating m-1"
+              href="https://www.facebook.com/olympics/"
+              role="button"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+    
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://twitter.com/Olympics?s=20&t=_Qt9YfBvdOxF0QOsVN6WDg" role="button"><i class="fa fa-twitter"></i
+            ></a>
+    
+                    <!-- Google -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://olympics.com/" role="button"><i class="fa fa-google"></i
+            ></a>
+    
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/olympics/" role="button"><i class="fa fa-instagram"></i
+            ></a>
+    
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://ch.linkedin.com/company/international-olympic-committee" role="button"><i class="fa fa-linkedin"></i
+            ></a>
+            <div class=""><span style="color: gray;"><a href="https://www.ua.pt/" style=" text-decoration: none; color: inherit;">Universidade de Aveiro</a></span></div>
+                </section>
+                <!-- Section: Social media -->
+    
+                <!-- Section: Form -->
+            </div>
+            <!-- Grid container -->
+        </footer>
+      </div>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../wwwroot/lib/knockout/dist/knockout-latest.min.js"></script>
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/myScript.js"></script>
+</body>
+</html>

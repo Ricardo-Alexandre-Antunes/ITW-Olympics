@@ -1,0 +1,262 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ITW 2022/23 - Olympic Games editions List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link href="../wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../wwwroot/lib/font-awesome/dist/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/myCSS.css" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" tabindex="Olympics"><img src="../img/giphy.gif" height="24" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="athletes.html"><i class="fa fa-user-o text-warning"></i> Athletes</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="competitions.html"><i class="fa fa-trophy"></i> Competitions</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="countries.html"><i class=" fa fa-flag-o text-danger"></i> Countries</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="games.html"><i class="fa fa-map-marker text-success"></i> Games</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="modalities.html"><i class="fa fa-soccer-ball-o text-primary"></i> Modalities</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="statistics.html"><i class="fa fa-line-chart text-secondary"></i> Statistics</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="faq.html"><i class="fa fa-question-circle text-secondary"></i> Faq</a></li>
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="favs.html"><i style="color: red;" class="fa fa-heart"></i> Favorites</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div style="padding: 10px;">
+    <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ["Name", "Counter", { role: "style" } ],
+            ["1896 Summer", 12, "blue"],
+            ["1900 Summer", 31, "blue"],
+            ["1904 Summer", 15, "blue"],
+            ["1906 Summer", 21, "blue"],
+            ["1908 Summer", 22, "blue"],
+            ["1912 Summer", 29, "blue"],
+            ["1920 Summer", 29, "blue"],
+            ["1924 Summer", 45, "blue"],
+            ["1924 Winter", 19, "blue"],
+            ["1928 Summer", 46, "blue"],
+            ["1928 Winter", 25, "blue"],
+            ["1932 Summer", 47, "blue"],
+            ["1932 Winter", 17, "blue"],
+            ["1936 Summer", 49, "blue"],
+            ["1936 Winter", 28, "blue"],
+            ["1948 Summer", 59, "blue"],
+            ["1948 Winter", 28, "blue"],
+            ["1952 Summer", 69, "blue"],
+            ["1952 Winter", 30, "blue"],
+            ["1956 Summer", 72, "blue"],
+            ["1956 Winter", 32, "blue"],
+            ["1960 Summer", 84, "blue"],
+            ["1960 Winter", 30, "blue"],
+            ["1964 Summer", 93, "blue"],
+            ["1964 Winter", 36, "blue"],
+            ["1968 Summer", 112, "blue"],
+            ["1968 Winter", 37, "blue"],
+            ["1972 Summer", 121, "blue"],
+            ["1972 Winter", 35, "blue"],
+            ["1976 Summer", 92, "blue"],
+            ["1976 Winter", 37, "blue"],
+            ["1980 Summer", 80, "blue"],
+            ["1980 Winter", 37, "blue"],
+            ["1984 Summer", 140, "blue"],
+            ["1984 Winter", 49, "blue"],
+            ["1988 Summer", 159, "blue"],
+            ["1988 Winter", 57, "blue"],
+            ["1992 Summer", 169, "blue"],
+            ["1992 Winter", 64, "blue"],
+            ["1994 Winter", 67, "blue"],
+            ["1996 Summer", 197, "blue"],
+            ["1998 Winter", 72, "blue"],
+            ["2000 Summer", 200, "blue"],
+            ["2002 Winter", 77, "blue"],
+            ["2004 Summer", 201, "blue"],
+            ["2006 Winter", 79, "blue"],
+            ["2008 Summer", 204, "blue"],
+            ["2010 Winter", 82, "blue"],
+            ["2012 Summer", 205, "blue"],
+            ["2014 Winter", 89, "blue"],
+            ["2016 Summer", 207, "blue"],
+        ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+                        { calc: "stringify",
+                            sourceColumn: 1,
+                            type: "string",
+                            role: "annotation" },
+                        2]);
+
+        var options = {
+            title: "Number of participant countries on the Olympic Games by Edition",
+            width: 1800,
+            height: 800,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+        chart.draw(view, options);
+    }
+    </script>
+    </div>
+
+    <div id="chart_div" style="padding-left: 10px;">
+        <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+            var data = google.visualization.arrayToDataTable([
+            ["Name", "Number of modalities", { role: "style" } ],
+            ["1896 Summer", 9, "blue"],
+            ["1900 Summer", 20, "blue"],
+            ["1904 Summer", 18, "blue"],
+            ["1906 Summer", 13, "blue"],
+            ["1908 Summer", 24, "blue"],
+            ["1912 Summer", 17, "blue"],
+            ["1920 Summer", 25, "blue"],
+            ["1924 Summer", 20, "blue"],
+            ["1924 Winter", 10, "blue"],
+            ["1928 Summer", 17, "blue"],
+            ["1928 Winter", 8, "blue"],
+            ["1932 Summer", 18, "blue"],
+            ["1932 Winter", 7, "blue"],
+            ["1936 Summer", 24, "blue"],
+            ["1936 Winter", 8, "blue"],
+            ["1948 Summer", 20, "blue"],
+            ["1948 Winter", 9, "blue"],
+            ["1952 Summer", 19, "blue"],
+            ["1952 Winter", 8, "blue"],
+            ["1956 Summer", 19, "blue"],
+            ["1956 Winter", 8, "blue"],
+            ["1960 Summer", 19, "blue"],
+            ["1960 Winter", 8, "blue"],
+            ["1964 Summer", 21, "blue"],
+            ["1964 Winter", 10, "blue"],
+            ["1968 Summer", 20, "blue"],
+            ["1968 Winter", 10, "blue"],
+            ["1972 Summer", 23, "blue"],
+            ["1972 Winter", 10, "blue"],
+            ["1976 Summer", 23, "blue"],
+            ["1976 Winter", 10, "blue"],
+            ["1980 Summer", 23, "blue"],
+            ["1980 Winter", 10, "blue"],
+            ["1984 Summer", 25, "blue"],
+            ["1984 Winter", 10, "blue"],
+            ["1988 Summer", 27, "blue"],
+            ["1988 Winter", 10, "blue"],
+            ["1992 Summer", 29, "blue"],
+            ["1992 Winter", 12, "blue"],
+            ["1994 Winter", 12, "blue"],
+            ["1996 Summer", 31, "blue"],
+            ["1998 Winter", 14, "blue"],
+            ["2000 Summer", 34, "blue"],
+            ["2002 Winter", 15, "blue"],
+            ["2004 Summer", 34, "blue"],
+            ["2006 Winter", 15, "blue"],
+            ["2008 Summer", 34, "blue"],
+            ["2010 Winter", 15, "blue"],
+            ["2012 Summer", 32, "blue"],
+            ["2014 Winter", 15, "blue"],
+            ["2016 Summer", 34, "blue"],
+            ]);
+
+            var options = {
+                title: 'Number of modalities on the Olympic Games by edition',
+                height: 800,
+                width: 1800,
+                vAxis: {
+                title: 'Olimpic Games edition'
+                }
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+            chart.draw(data, options);
+            }
+        </script>
+    </div>
+
+
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <img src="140398.ico" height="30" /> Loading data...
+                    </h5>
+                </div>
+                <div class="modal-body text-center">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/69fa44d0-81b5-47a5-a4d2-db7d760e93c6/d53kvru-6dd0d8f7-fc76-418f-92b4-de8aa1d3e619.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzY5ZmE0NGQwLTgxYjUtNDdhNS1hNGQyLWRiN2Q3NjBlOTNjNlwvZDUza3ZydS02ZGQwZDhmNy1mYzc2LTQxOGYtOTJiNC1kZThhYTFkM2U2MTkuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.edfJBsURCWYSvKczT9g7VAkL8fYn5SyzQeUwXOapYOs" height="150" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of Working Area -->
+    <div class="footer" style="margin-top:30px">
+        <!-- Footer -->
+        <footer class="bg-white text-center text-white mt-2">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <a href="#nav" class="sr-only sr-only-focusable nav-link mb-3" style="color: grey; font-size: larger">Skip footer</a
+            ><div class=""><span style="color: gray;">© Introdução as Tecnologias Web - 2022/23</span></div>
+            <!-- Facebook -->
+            <a
+              class="btn btn-outline-dark btn-floating m-1"
+              href="https://www.facebook.com/olympics/"
+              role="button"
+              ><i class="fa fa-facebook-f"></i
+            ></a>
+    
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://twitter.com/Olympics?s=20&t=_Qt9YfBvdOxF0QOsVN6WDg" role="button"><i class="fa fa-twitter"></i
+            ></a>
+    
+                    <!-- Google -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://olympics.com/" role="button"><i class="fa fa-google"></i
+            ></a>
+    
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/olympics/" role="button"><i class="fa fa-instagram"></i
+            ></a>
+    
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-dark btn-floating m-1" href="https://ch.linkedin.com/company/international-olympic-committee" role="button"><i class="fa fa-linkedin"></i
+            ></a>
+            <div class=""><span style="color: gray;"><a href="https://www.ua.pt/" style=" text-decoration: none; color: inherit;">Universidade de Aveiro</a></span></div>
+                </section>
+                <!-- Section: Social media -->
+    
+                <!-- Section: Form -->
+            </div>
+            <!-- Grid container -->
+        </footer>
+      </div>
+    <script src="../wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../wwwroot/lib/knockout/dist/knockout-latest.min.js"></script>
+    <script src="../wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="../js/games.js"></script>
+    <script src="../js/JavaScript.js"></script>
+</body>
+</html>
